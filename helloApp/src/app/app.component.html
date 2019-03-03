@@ -1,0 +1,63 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div >
+  <h1>
+    Welcome {{ title }}!
+  </h1>
+<h3> trackBy
+  <table > 
+    <tr *ngFor="let student of students; let i=index; trackBy:trackById">
+      <td>{{i+1}}</td>
+      <td>{{student.studentId}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.gender}}</td>
+      <td>{{student.age}}</td>
+      <td>{{student.course}}</td>
+        </tr>
+  </table><br>
+  <button (click)="getMoreStudent()">Get More Student</button>
+</h3>
+
+<!-- <div><app-child [myInput]="inputV"></app-child> </div> -->
+
+
+
+  <!-- <h3>
+<ul>
+<li *ngFor="let student of Students, let i=index, let f=first, let l=last, let e=even,let o=odd">
+  {{i+1}} * {{student.name}} -{{f}} - {{l}} -{{e}}- {{o}}
+  </li></ul></h3> -->
+  <!-- <div *ngIf="checkngif" [ngStyle]="{'color':'blue'}"> 
+    nglf example 
+  </div>     -->
+  <input type="radio" name="rdio1" (click)="changeValue(true)">true
+  <input type="radio" name="rdio2" (click)="changeValue(false)">false
+  <div *ngIf="isvalid ; then thenblock; else elseblock"> </div>
+  <ng-template #thenblock>
+    <div>this is thenblock valid</div>
+  </ng-template>
+
+  <ng-template #elseblock>
+    <div>
+      this is not valid
+    </div>
+  </ng-template>
+</div>
+<div>
+
+
+  <!-- <input *ngIf="isvalid" [ngStyle]="{'color':'blue'}" click="changeValue(true)">true
+  <input *ngIf="!isvalid" [ngStyle]="{'color':'blue'}" click="changeValue(false)">false -->
+
+</div>
+
+<p [ngStyle]="{'color':'red' ,'font-size':'50px', 'font-weight':'bold'}"> this is ngStyle </p>
+enter the name :<input [value]='data' (input)='data= $event.target.value'><br>
+
+
+your name:{{data}} <br>
+eneter the second name : <input [(ngModel)]='data1'> <br>
+your name: {{data1}} <br>
+<button (click)="onClick()"> try it </button>
+<button (click)="alter()">click me </button>
+
+<router-outlet></router-outlet>
